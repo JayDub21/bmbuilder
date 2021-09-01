@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <style>
+      .image-thumbnail {
+          height: 200px;
+        object-fit: cover;
+      }
+      a {
+          color: inherit;
+          text-decoration: none;
+      }
+      
+    </style>
+  </head>
+  <body class="m-5">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2">
+          <div class="card">
+            <ul class="list-group list-group-flush">
+                <a href={% url 'index' %} class="btn btn-dark btn-block m-1">Home</a>
+                <li class="list-group-item">Categories:</li>
+                <li class="list-group-item">
+                <a href="{% url 'gallery' %}">All</a> 
+                </li>
+              {% for category in categories %}
+              <li class="list-group-item">
+                  <a href="{% url 'gallery' %}?category={{category.name}}">{{category.name}}</a></li>      
+              {% endfor %}
+
+                  <a href={% url 'add' %} class="btn btn-dark btn-block m-1">Add Photo</a> 
+              
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-10">
+          <div class="row">
+           
+           {% for photo in photos %}
+            <div class="col-lg-4">
+                <a href={% url 'photo' photo.id %}>
+              <div class="card my-2">
+                <img
+                  class="image-thumbnail"
+                  src="{{photo.image.url}}"
+                  alt="Card image cap"
+                />
+
+              </div>
+                </a>
+            </div>
+            {% empty %}
+            <h3>No Images...</h3>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

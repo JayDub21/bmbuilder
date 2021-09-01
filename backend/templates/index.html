@@ -1,0 +1,60 @@
+{% extends 'base.html' %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+  </head>
+    {% block content %}
+    <main>
+      <section class="homeIntro" id="topScroll">
+        <div class="introName">
+            Bryan Murphy <br>
+            Builder<br>
+            <a href="#aboutScroll"><button class="button" type="button">About</button></a>
+            <a href={% url 'gallery' %}><button class="button" type="button">Gallery</button></a>
+           
+        </div>
+      </section>
+
+      <div class="homeAbout">
+        <img alt="LinkedIn-Picture" class="liSelfie rowNorm" src="../static/images/Ugly1.jpeg">
+        <div class="rowNorm" id="aboutMe">
+            <br>
+            <a href="#topScroll"><button type="button">Top of Page</button></a>
+            <br>
+            <h1></h1><a id="aboutScroll">Bryan Murphy</a></h1>
+            <hr>
+            <br>
+            <h2>Custom Home Builder in Central Texas </h2><br>
+            <p>
+                20 years building elite homes with a handful of the finest craftsmen
+                available. <br><br>
+
+                Experience includes: Custom Homes, Green Building, Period Specific Historical Renovations,
+                Additions & Remodels. <br><br>
+                
+                Bryan has completed projects in: Pemberton, Tarrytown, Westlake, Rob Roy,
+                Barton Creek, Lakeway, Hyde Park, Travis Heights, Barton Hills, Brykerwoods
+                and East Austin. <br><br>
+                
+                He has been designated as a Certified Graduate Builder by the National Home Builders Association. <br><hr><br><br>
+                
+                <img alt="LinkedIn-Picture" class="liSelfie rowNorm" src="../static/images/BryanMurphyBuilderLogo.png">
+                <a href="./contact" class="emailBtn">
+               example@clickme.com
+                </a><br><br>
+
+                    Phone: 555-555-5555
+                    <img alt="LinkedIn-Picture" class="liSelfie rowNorm" src="../static/images/colorLogo.jpg">
+                <br><br>
+
+               
+            </p>
+        </div>
+    
+    {% endblock%}
+  </body>
+</html>

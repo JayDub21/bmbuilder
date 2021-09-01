@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  font-family: 'PT Sans Narrow', 'Yanone Kaffeesatz', 'Barlow Condensed',
+    sans-serif;
+  width: 100%;
+}
+
+h1 {
+  padding: 2px;
+}
+
+.homeIntro {
+  padding: 50vh 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(https://bm-builder-image-gallery.s3.amazonaws.com/20210325_141627.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-color: #333;
+  overflow: hidden;
+}
+
+.introName {
+  margin: -25%;
+  color: white;
+  font-size: 4.75rem;
+  text-shadow: 0 0 5px black;
+  text-align: center;
+}
+
+.button {
+  max-width: 95%;
+  color: white;
+  text-shadow: 0 0 5px black;
+  padding: 1%;
+  font-size: 1.5rem;
+  border-width: 0.25rem;
+  border-radius: 25px;
+  border-color: white;
+  background-color: transparent;
+  background-repeat: no-repeat;
+}
+
+.button:hover {
+  background: navy;
+  color: white;
+  font-size: 3rem;
+}
+
+.homeAbout {
+  padding: 4em 0;
+  padding-bottom: 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+#aboutMe {
+  text-align: center;
+  max-width: 75%;
+  margin: auto;
+}
+
+.liSelfie {
+  max-width: 40%;
+  margin: auto;
+}
+
+.rowNorm {
+  width: 100%;
+}
+
+@media (pointer: coarse) {
+  .homeIntro {
+    background-attachment: initial;
+  }
+  .introName {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .introName {
+    font-size: 3.5rem;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  .introName {
+    font-size: 2.25rem;
+  }
+}
+
+@media only screen and (max-width: 321px) {
+  .introName {
+    font-size: 1.9rem;
+  }
+}
