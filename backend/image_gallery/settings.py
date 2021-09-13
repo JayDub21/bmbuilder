@@ -1,6 +1,10 @@
 from pathlib import Path
 import os
-from decouple import config
+# from decouple import config
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -11,7 +15,7 @@ PROJECT_DIR = Path(BASE_DIR, 'image_gallery')
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('DJANGO_KEY')
+SECRET_KEY = 'DJANGO_KEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -72,9 +76,9 @@ WSGI_APPLICATION = 'image_gallery.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
+        'NAME': os.getenv('DB_NAME'),
         'USER': 'postgres',
-        'PASSWORD': config('DB_PASSWORD'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
         'HOST': 'localhost'
     }
 }
@@ -132,11 +136,11 @@ AWS_QUERYSTRING_AUTH = False
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # AWS User Keys
-AWS_ACCESS_KEY_ID = config('BM_KEY')
-AWS_SECRET_ACCESS_KEY = config('BM_SECRET_KEY')
+AWS_ACCESS_KEY_ID = os.getenv('BM_KEY')
+AWS_SECRET_ACCESS_KEY = os.getenv('BM_SECRET_KEY')
 
 # AWS S3 Bucket
-AWS_STORAGE_BUCKET_NAME = config('BM_BUCKET_NAME')
+AWS_STORAGE_BUCKET_NAME = os.getenv('BM_BUCKET_NAME')
 
 
 
